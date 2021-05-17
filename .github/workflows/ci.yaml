@@ -20,7 +20,7 @@ jobs:
       - name: debug
         run: set -x
       - name: build
-        run: docker build --file ${filename} --no-cache --${registry}/${user}/${project}:${tagname} .
+        run: docker build --file ${filename} --no-cache --tag ${registry}/${user}/${project}:${tagname} .
       - name: run
         run: docker run --detach --name ${project} ${registry}/${user}/${project}:${tagname}
       - name: test
