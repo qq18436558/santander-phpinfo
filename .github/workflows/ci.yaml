@@ -12,7 +12,7 @@ jobs:
       registry: index.docker.io
       sleep: "10"
       tagname: ci
-      user: Guillermopolo76
+      user: guillermopolo76
     runs-on: ubuntu-18.04
     steps:
       - name: checkout
