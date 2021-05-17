@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: debug
-        run: set -x
       - name: build
         run: docker build --file Dockerfile --no-cache --tag ${user}/${project}:ci .
       - name: run
