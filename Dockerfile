@@ -1,3 +1,5 @@
+FROM alpine:latest
+RUN apk add php
 WORKDIR /app
 COPY src .
 ENTRYPOINT ["php"]
