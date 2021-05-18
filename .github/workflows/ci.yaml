@@ -16,9 +16,9 @@ jobs:
       - name: build
         run: docker build --file Dockerfile --no-cache --tag ${user}/${project}:ci .
       - name: run
-        run: docker run --detach --name santander-phpinfo index.docker.io/${user}/${project}:ci
+        run: docker run --detach --name ${project} index.docker.io/${user}/${project}:ci
       - name: test
-        run: while true ; do sleep 10 ; docker logs santander-phpinfo 2>& 1 | grep started && break ; done
+        run: while true ; do sleep 10 ; docker logs ${project} 2>& 1 | grep started && break ; done
       - name: top
         run: docker top ${project}
       - name: stats
