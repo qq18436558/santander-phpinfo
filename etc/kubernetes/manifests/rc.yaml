@@ -1,7 +1,13 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: example
+  selfLink: 
+  resourceVersion: 
+  uid: 
+  creationTimestamp: 
+  managedFields: []
+  name: rc
+  namespace:
 spec:
   replicas: 2
   selector:
@@ -14,12 +20,12 @@ spec:
     spec:
       containers:
         - name: php
-          image: 'index.docker.io/rodrigollanos1/phpinfo:latest'
+          image: 'index.docker.io/rodrigollanos1/santander-phpinfo:latest'
           ports:
             - containerPort: 8080
               protocol: TCP
           env:
-            - name: NOMBRE_ALUMNO
+            - name: nombre_alumno
               value: rodrigo
           resources: {}
           terminationMessagePath: /dev/termination-log
