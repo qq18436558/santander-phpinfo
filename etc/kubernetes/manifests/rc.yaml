@@ -1,7 +1,7 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: rc
+  name: rc-latest
   namespace: rodrigollanos
   selfLink: /api/v1/namespaces/rodrigollanos/replicationcontrollers/rc
   uid: 2b4b94b7-25bc-4fa3-a861-d4a9f5214118
