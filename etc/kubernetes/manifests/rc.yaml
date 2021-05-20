@@ -1,13 +1,89 @@
-apiVersion: v1
 kind: ReplicationController
+apiVersion: v1
 metadata:
-  selfLink: 
-  resourceVersion: 
-  uid: 
-  creationTimestamp: 
-  managedFields: []
+  selfLink: /api/v1/namespaces/rodrigollanos/replicationcontrollers/rc
+  resourceVersion: '898434'
   name: rc
-  namespace:
+  uid: 2b4b94b7-25bc-4fa3-a861-d4a9f5214118
+  creationTimestamp: '2021-05-19T11:30:48Z'
+  generation: 2
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2021-05-20T09:29:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+        'f:spec':
+          'f:replicas': {}
+          'f:selector':
+            .: {}
+            'f:app': {}
+          'f:template':
+            .: {}
+            'f:metadata':
+              .: {}
+              'f:creationTimestamp': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+            'f:spec':
+              .: {}
+              'f:containers':
+                .: {}
+                'k:{"name":"php"}':
+                  'f:image': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources':
+                    .: {}
+                    'f:limits':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                    'f:requests':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                  'f:env':
+                    .: {}
+                    'k:{"name":"nombre_alumno"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8080,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2021-05-20T09:29:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:availableReplicas': {}
+          'f:fullyLabeledReplicas': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+  namespace: rodrigollanos
+  labels:
+    app: santander-phpinfo
 spec:
   replicas: 2
   selector:
@@ -20,14 +96,20 @@ spec:
     spec:
       containers:
         - name: php
-          image: 'index.docker.io/rodrigollanos1/santander-phpinfo:latest'
+          image: 'index.docker.io/ismaldk/santander-phpinfo:latest'
           ports:
             - containerPort: 8080
               protocol: TCP
           env:
             - name: nombre_alumno
               value: rodrigo
-          resources: {}
+          resources:
+            limits:
+              cpu: 40m
+              memory: 40M
+            requests:
+              cpu: 20m
+              memory: 20M
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
@@ -36,4 +118,9 @@ spec:
       dnsPolicy: ClusterFirst
       securityContext: {}
       schedulerName: default-scheduler
-status: {}
+status:
+  replicas: 2
+  fullyLabeledReplicas: 2
+  readyReplicas: 2
+  availableReplicas: 2
+  observedGeneration: 2
