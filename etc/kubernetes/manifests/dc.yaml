@@ -3,7 +3,7 @@ apiVersion: apps.openshift.io/v1
 metadata:
   name: dc-latest
   namespace: rodrigollanos
-  selfLink: /api/v1/namespaces/rodrigollanos/replicationcontrollers/dc
+  selfLink: /api/v1/namespaces/rodrigollanos/replicationcontrollers/dc-latest
   uid: 2b4b94b7-25bc-4fa3-a861-d4a9f5214118
   resourceVersion: '918620'
   generation: 9
@@ -13,7 +13,7 @@ metadata:
   managedFields:
     - manager: kube-controller-manager
       operation: Update
-      apiVersion: v1
+      apiVersion: apps.openshift.io/v1
       time: '2021-05-20T10:41:20Z'
       fieldsType: FieldsV1
       fieldsV1:
@@ -25,7 +25,7 @@ metadata:
           'f:replicas': {}
     - manager: Mozilla
       operation: Update
-      apiVersion: v1
+      apiVersion: apps.openshift.io/v1
       time: '2021-05-20T10:42:00Z'
       fieldsType: FieldsV1
       fieldsV1:
