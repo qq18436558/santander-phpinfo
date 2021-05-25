@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: santander-phpinfo-route
+spec:
+  host: rllanos-phpinfo.sebastian-colomer.es
+  path: /
+  to:
+    kind: Service
+    name: santander-phpinfo-svc
+  port:
+    targetPort: 8080
