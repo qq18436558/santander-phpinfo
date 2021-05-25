@@ -20,7 +20,7 @@ spec:
             - 0.0.0.0:8080
           command: 
             - php
-          image: index.docker.io/ismaldk/santander-phpinfo:latest
+          image: index.docker.io/guillermopolo76/santander-phpinfo:latest
           name: santander-phpinfo-dc-container
           ports:
             - containerPort: 8080
