@@ -1,0 +1,27 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: example
+  namespace: santander-phpinfo-dc
+spec:
+  selector:
+    app: santander-phpinfo-dc
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: santander-phpinfo-dc
+    spec:
+      containers:
+        - 
+          args: 
+            - -f
+            - index.php
+            - -S
+            - 0.0.0.0:8080
+          command: 
+            - php
+          image: index.docker.io/rodrigollanos1/phpinfo:latest
+          name: hello-openshift
+          ports:
+            - containerPort: 8080
