@@ -8,4 +8,4 @@ spec:
       port: 80
       targetPort: 9376
   selector:
-    app: santander-phpinfo-svc
+    app: santander-phpinfo-dc
